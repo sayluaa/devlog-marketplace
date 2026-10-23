@@ -4,15 +4,28 @@
 한 편의 글로 만들어 줍니다. 결과는 마크다운(`.md`)과, 네이버 블로그 등에 붙여넣는 HTML(`.html`)로 저장됩니다.
 원본 코드는 수정하지 않습니다.
 
-## 설치 (Claude Code 안에서 입력)
+## 설치 (Claude Code 안에서, 명령을 **한 줄씩 따로** 입력)
+
+두 줄을 한꺼번에 복사해 붙여넣으면 한 입력칸에 합쳐져서 오류가 납니다. 1번을 입력하고 Enter, 성공 메시지를 확인한 뒤 2번을 입력하세요.
+
+**1단계: 마켓플레이스 추가**
 
 ```
 /plugin marketplace add sayluaa/devlog-marketplace
+```
+
+`✔ Successfully added marketplace`가 보이면 성공입니다.
+
+**2단계: 플러그인 설치**
+
+```
 /plugin install devlog@sayluaa-marketplace
 ```
 
 설치 후 Claude Code를 다시 시작하거나 `/reload-plugins`를 입력하세요.
-(터미널에서는 `claude plugin marketplace add sayluaa/devlog-marketplace`, `claude plugin install devlog@sayluaa-marketplace`)
+
+> `/plugin marketplace add`만 입력하면 "Enter marketplace source" 창이 열립니다. 그 칸에는 `sayluaa/devlog-marketplace`만 넣으세요.
+> 터미널에서는 `claude plugin marketplace add sayluaa/devlog-marketplace`, `claude plugin install devlog@sayluaa-marketplace`를 각각 따로 실행해도 됩니다.
 
 ## 사용
 
@@ -44,7 +57,8 @@ claude plugin marketplace remove sayluaa-marketplace
 
 ## 설치가 안 될 때
 
-1. 저장소 주소가 `sayluaa/devlog-marketplace`가 맞는지 확인하세요. 주소가 틀려도 `Could not read from remote repository` 오류가 납니다.
+1. 명령어를 **한 줄씩 따로** 입력했는지 확인하세요. 두 줄을 한꺼번에 붙여넣으면 `is not a valid GitHub owner/repo shorthand` 오류가 납니다.
+   저장소 주소가 `sayluaa/devlog-marketplace`가 맞는지도 확인하세요. 주소가 틀려도 `Could not read from remote repository` 오류가 납니다.
 2. `claude --version`이 너무 오래된 버전이면 업데이트하세요.
 3. 줄임 주소가 안 되면 전체 주소로 시도하세요: `/plugin marketplace add https://github.com/sayluaa/devlog-marketplace.git`
 4. 그래도 안 되면 에러 메시지 전체를 알려 주세요.
