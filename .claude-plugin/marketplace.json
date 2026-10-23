@@ -1,0 +1,14 @@
+{
+  "name": "sayluaa-marketplace",
+  "description": "수업 개발일지 자동화 스킬 모음",
+  "owner": {
+    "name": "sayluaa"
+  },
+  "plugins": [
+    {
+      "name": "devlog",
+      "source": "./plugins/devlog",
+      "description": "오늘 배운 수업 코드를 블로그용 개발일지로 정리 (요약, 초보자용 주석, 결과물 삽입)"
+    }
+  ]
+}
